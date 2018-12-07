@@ -1,0 +1,28 @@
+doctype html
+html(class="no-js", lang="ru")
+
+    include ../components/head/head.pug
+    include ../components/main/main.pug
+    include ../components/header/header.pug
+    include ../components/delayed/delayed.pug
+    
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+
+        .main__wrapper
+            +header()
+            .main__content
+                h1.main__title Задержанные рейсы
+                +delayed()
+
+            
+
+        
+
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();
+
+        //- Main scripts. You can replace it, but I recommend you to leave it here
+        script(src='%=static=%js/main%=hash=%%=min=%.js')
